@@ -343,4 +343,7 @@ thrust_data = pd.DataFrame({
 # Write to Excel file
 with pd.ExcelWriter('Mar_7_TritonHF_processed.xlsx') as writer:
     df.to_excel(writer, sheet_name='Raw Data', index=False)
-    thrust_data.to_excel(writer, sheet_name='Processed Thrust', index=False)
+    # Combine DataFrames
+    combined_df = pd.concat([df, thrust_data], axis=1)
+    combined_df.to_excel(writer, sheet_name='Processed Data', index=False)
+    thrust_data.to_excel(writer, sheet_name='Thrust Only', index=False)
