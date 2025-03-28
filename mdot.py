@@ -10,8 +10,11 @@ def mdot_from_sys():
     burn_mask = (df['Time (s)'] >= 384.8) & (df['Time (s)'] <= 389.4)
 
     #cda of the system
-    cda_sysf = 0.00002058330588
-    cda_sysox = 0.00007119840625
+    cda_sysf = 2.7189351186894784e-05
+    cda_sysox= 5.49554605806529e-05
+
+    # cda_sysf = 2.8643430403494142e-05
+    # cda_sysox = 4.871850334397766e-05
 
     #defining the fuel characteristics
     rho_fuel = 789

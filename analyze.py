@@ -341,7 +341,9 @@ thrust_data = pd.DataFrame({
 })
 
 # Write to Excel file
-with pd.ExcelWriter('Mar_7_TritonHF_processed.xlsx') as writer:
+import os
+os.makedirs('results', exist_ok=True)
+with pd.ExcelWriter('results/Mar_7_TritonHF_processed.xlsx', engine='openpyxl') as writer:
     df.to_excel(writer, sheet_name='Raw Data', index=False)
     # Combine DataFrames
     combined_df = pd.concat([df, thrust_data], axis=1)
